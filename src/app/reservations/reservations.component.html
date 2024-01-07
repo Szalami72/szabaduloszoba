@@ -1,3 +1,5 @@
+<ng-container *ngIf="!isError; else haveError"></ng-container>
+<ng-container *ngIf="reservations; else waiting"></ng-container>
 <div class="container">
     <h1 class="mt-2">A szabadulószoba</h1>
     <h3 class="mt-4">Foglalások</h3>
@@ -5,14 +7,14 @@
     <div class="row justify-content-center mt-4">
         <a href="/home" class="col-lg-2 col-sm-6  btn btn-primary mb-3">Főoldal</a>
         <div class="col-lg-auto"></div>
-        <a href="/new-reservation" class="col-lg-2 col-sm-6 btn btn-warning mb-3">Új foglalás</a>
+        <a href="/ujfoglalas" class="col-lg-2 col-sm-6 btn btn-warning mb-3">Új foglalás</a>
     </div>
     <hr>
 <div class="reservations" >
     <table class="table">
         <thead>
           <tr>
-            <th scope="col">#</th>
+            <!-- <th scope="col">#</th> -->
             <th scope="col">Dátum</th>
             <th scope="col">Név</th>
             <th scope="col">Fő</th>
@@ -22,7 +24,7 @@
         </thead>
         <tbody>
           <tr *ngFor="let resData of reservations">
-            <th scope="row">{{resData.id}}</th>
+            <!-- <th scope="row">{{resData.id}}</th> -->
             <td>{{resData.datum}}</td>
             <td>{{resData.nev}}</td>
             <td>{{resData.fo}}</td>
@@ -33,4 +35,20 @@
         </tbody>
       </table>
 </div>
+<div class="row footer fixed-bottom">
+    <div class="col-6">a szabaduloszoba 2024 @</div>
+    <div class="col-6">aszobabarohadszmeg@escape.com</div>
+ </div>
 </div>
+
+<ng-template #haveError>
+    <div class="alert alert-danger" role="alert">
+        {{errorMessage}}
+      </div>
+</ng-template>
+
+<ng-template #waiting>
+    <div class="alert alert-warning" role="alert">
+        Várakozás a szerverre!
+      </div>
+</ng-template> 

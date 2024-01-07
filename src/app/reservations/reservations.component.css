@@ -17,3 +17,10 @@
 .btn-warning {
     background-color: orange;
 }
+
+.footer {
+    font-size: 1rem;
+    padding: 0.5rem;
+    background-color: #fff;
+    border-top: 1px solid #aaa;
+}
