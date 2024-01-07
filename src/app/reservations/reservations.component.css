@@ -1,0 +1,19 @@
+* {
+    text-align: center;
+}
+
+.btn {
+    border: 4px solid #666;
+}
+
+.btn:hover {
+    font-style: italic;
+}
+
+.btn-primary {
+    background-color: brown;
+}
+
+.btn-warning {
+    background-color: orange;
+}
