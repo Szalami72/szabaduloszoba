@@ -7,12 +7,14 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { HomeComponent } from './home/home.component';
 import { ReservationsComponent } from './reservations/reservations.component';
 import { HttpClientModule } from '@angular/common/http';
+import { NewreservationComponent } from './newreservation/newreservation.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    ReservationsComponent
+    ReservationsComponent,
+    NewreservationComponent
   ],
   imports: [
     BrowserModule,

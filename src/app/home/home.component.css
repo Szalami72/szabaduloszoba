@@ -22,6 +22,11 @@ p {
     text-align: justify;
 }
 
+.text span {
+    font-size: 1.2rem;
+    color: brown;
+}
+
 .logo img {
     width: 20%;
     margin: 0 auto;
@@ -48,4 +53,9 @@ p {
 
 .btn-warning {
     background-color: orange;
+}
+
+ul,
+li {
+    background-color: #eee;
 }
