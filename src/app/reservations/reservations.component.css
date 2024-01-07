@@ -19,11 +19,12 @@ h3 {
 }
 
 .btn-primary {
-    background-color: brown;
+    background-color: chocolate;
 }
 
 .btn-warning {
-    background-color: orange;
+    background-color: olivedrab;
+    color: white;
 }
 
 .footer {
