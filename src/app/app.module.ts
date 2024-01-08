@@ -8,6 +8,7 @@ import { HomeComponent } from './home/home.component';
 import { ReservationsComponent } from './reservations/reservations.component';
 import { HttpClientModule } from '@angular/common/http';
 import { NewreservationComponent } from './newreservation/newreservation.component';
+import { DatePipe } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,7 @@ import { NewreservationComponent } from './newreservation/newreservation.compone
     NgbModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [DatePipe],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
