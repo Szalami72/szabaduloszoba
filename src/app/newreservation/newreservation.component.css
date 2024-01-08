@@ -37,3 +37,10 @@ h3 {
     background-color: #fff;
     border-top: 1px solid #aaa;
 }
+
+input[type="range"] {
+    background-color: #fff;
+    padding: 1.1rem;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+}
