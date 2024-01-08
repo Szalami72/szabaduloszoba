@@ -1,6 +1,9 @@
 import { Component } from '@angular/core';
 import { DatePipe } from '@angular/common';
 
+
+
+
 @Component({
   selector: 'app-newreservation',
   templateUrl: './newreservation.component.html',
@@ -8,11 +11,16 @@ import { DatePipe } from '@angular/common';
 })
 export class NewreservationComponent {
   currentDate: string;
+  numOfPeople: number = 2;
 
   constructor(private datePipe: DatePipe) {
     const now = new Date();
     const formattedDate = this.datePipe.transform(now, 'yyyy-MM-dd');
     this.currentDate = formattedDate || '';
+  }
+
+  onNumOfPeopleChange() {
+
   }
 
 }

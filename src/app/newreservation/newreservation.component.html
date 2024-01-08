@@ -20,8 +20,8 @@
             <input type="text" class="form-control" id="name">
             </div>
             <div class="col col-lg-4 col-sm-12 mb-3">
-            <label for="people" class="form-label">Hány fő:</label>
-            <input type="number" class="form-control" id="people">
+              <label for="people" class="form-label">Hány fő: {{numOfPeople}}</label>
+              <input type="range" class="form-range" name="people" min="2" max="16" step="1" id="people" [(ngModel)]="numOfPeople" (input)="onNumOfPeopleChange()">
             </div>
         </div>
         <div class="row">

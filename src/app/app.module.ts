@@ -9,6 +9,10 @@ import { ReservationsComponent } from './reservations/reservations.component';
 import { HttpClientModule } from '@angular/common/http';
 import { NewreservationComponent } from './newreservation/newreservation.component';
 import { DatePipe } from '@angular/common';
+import { FormsModule } from '@angular/forms';
+
+
+
 
 @NgModule({
   declarations: [
@@ -21,7 +25,9 @@ import { DatePipe } from '@angular/common';
     BrowserModule,
     AppRoutingModule,
     NgbModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule,
+
   ],
   providers: [DatePipe],
   bootstrap: [AppComponent]
