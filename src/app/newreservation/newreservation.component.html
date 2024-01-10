@@ -13,25 +13,25 @@
         <div class="row">
             <div class="col col-lg-4 col-sm-12 mb-3">
             <label for="date" class="form-label">Dátum:</label>
-            <input type="date" class="form-control" id="date" [value]="currentDate" formControlName="date">
+            <input type="date" class="form-control" id="date" [value]="currentDate" formControlName="datum">
             </div>
             <div class="col col-lg-4 col-sm-12 mb-3">
             <label for="name" class="form-label">Név:</label>
-            <input type="text" class="form-control" id="name" formControlName="name">
+            <input type="text" class="form-control" id="name" formControlName="nev">
             </div>
             <div class="col col-lg-4 col-sm-12 mb-3">
               <label for="people" class="form-label">Hány fő: {{numOfPeople}}</label>
-              <input type="range" class="form-range" name="people" min="2" max="16" step="1" id="people" formControlName="people">
+              <input type="range" class="form-range" name="people" min="2" max="16" step="1" id="people" formControlName="fo" (input)="onNumOfPeopleChange($event)">
             </div>
         </div>
         <div class="row">
             <div class="col col-lg-6 col-sm-12 mb-3">
             <label for="address" class="form-label">Cím:</label>
-            <input type="text" class="form-control" id="address" formControlName="address">
+            <input type="text" class="form-control" id="address" formControlName="cim">
             </div>
             <div class="col col-lg-6 col-sm-12 mb-3">
             <label for="zipcode" class="form-label">Irányítószán:</label>
-            <input type="number" class="form-control" id="zipcode" formControlName="zipcode">
+            <input type="number" class="form-control" id="zipcode" formControlName="iranyitoszam">
             </div>
         </div>
         <div class="row justify-content-center mt-4">
