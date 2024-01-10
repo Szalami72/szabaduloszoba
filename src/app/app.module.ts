@@ -10,6 +10,9 @@ import { HttpClientModule } from '@angular/common/http';
 import { NewreservationComponent } from './newreservation/newreservation.component';
 import { DatePipe } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms'; // Importáld a ReactiveFormsModule-t
+
+
 
 
 
@@ -27,6 +30,8 @@ import { FormsModule } from '@angular/forms';
     NgbModule,
     HttpClientModule,
     FormsModule,
+    ReactiveFormsModule
+
 
   ],
   providers: [DatePipe],

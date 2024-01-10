@@ -9,33 +9,33 @@
     </div>
     <hr>
     <h4 class="mt-4 mb-4">Töltsd ki az alábbi űrlapot majd nyomd meg a <i>Rögzít gombot</i></h4>
-    <form>
+    <form [formGroup]="uploadForm" (ngSubmit)="uploadDatas()">
         <div class="row">
             <div class="col col-lg-4 col-sm-12 mb-3">
             <label for="date" class="form-label">Dátum:</label>
-            <input type="date" class="form-control" id="date" [value]="currentDate">
+            <input type="date" class="form-control" id="date" [value]="currentDate" formControlName="date">
             </div>
             <div class="col col-lg-4 col-sm-12 mb-3">
             <label for="name" class="form-label">Név:</label>
-            <input type="text" class="form-control" id="name">
+            <input type="text" class="form-control" id="name" formControlName="name">
             </div>
             <div class="col col-lg-4 col-sm-12 mb-3">
               <label for="people" class="form-label">Hány fő: {{numOfPeople}}</label>
-              <input type="range" class="form-range" name="people" min="2" max="16" step="1" id="people" [(ngModel)]="numOfPeople" (input)="onNumOfPeopleChange()">
+              <input type="range" class="form-range" name="people" min="2" max="16" step="1" id="people" formControlName="people">
             </div>
         </div>
         <div class="row">
             <div class="col col-lg-6 col-sm-12 mb-3">
             <label for="address" class="form-label">Cím:</label>
-            <input type="text" class="form-control" id="address">
+            <input type="text" class="form-control" id="address" formControlName="address">
             </div>
             <div class="col col-lg-6 col-sm-12 mb-3">
             <label for="zipcode" class="form-label">Irányítószán:</label>
-            <input type="number" class="form-control" id="zipcode">
+            <input type="number" class="form-control" id="zipcode" formControlName="zipcode">
             </div>
         </div>
         <div class="row justify-content-center mt-4">
-        <button type="submit" class="col-lg-2 col-sm-6 btn btn-primary">Rögzít</button>
+        <button type="submit" class="col-lg-2 col-sm-6 btn btn-primary" [disabled]="!uploadForm.valid">Rögzít</button>
         </div>
       </form>
       <div class="row justify-content-center mt-4">
