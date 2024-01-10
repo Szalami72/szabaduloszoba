@@ -2,11 +2,7 @@ import { Component } from '@angular/core';
 import { DatePipe } from '@angular/common';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { BaseService } from '../base.service';
-
-
-
-
-
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-newreservation',
@@ -16,10 +12,11 @@ import { BaseService } from '../base.service';
 export class NewreservationComponent {
   currentDate: string;
   uploadForm: FormGroup;
-
   numOfPeople: number = 2;
+  errorMessage = "";
+  isError = false;
 
-  constructor(private datePipe: DatePipe, private formbuilder: FormBuilder, private baseservice: BaseService) {
+  constructor(private datePipe: DatePipe, private formbuilder: FormBuilder, private baseservice: BaseService, private router: Router) {
     const now = new Date();
     const formattedDate = this.datePipe.transform(now, 'yyyy-MM-dd');
     this.currentDate = formattedDate || '';
@@ -36,9 +33,16 @@ export class NewreservationComponent {
   uploadDatas() {
     if (this.uploadForm.valid) {
       this.baseservice.setReservation(this.uploadForm)
-      console.log('Űrlap adatok:', this.uploadForm.value);
-    } else {
-      console.log('Az űrlap nem érvényes!');
+        .subscribe(
+          (success) => {
+            if (success) {
+              this.router.navigate(['/foglalasok']);
+            } else {
+              this.errorMessage = "Hiba a feltöltés során!";
+              this.isError = true;
+            }
+          }
+        );
     }
   }
 

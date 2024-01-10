@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable, map } from 'rxjs';
-import { Router } from '@angular/router';
+import { Observable, catchError, map, of } from 'rxjs';
 
 
 @Injectable({
@@ -10,7 +9,7 @@ import { Router } from '@angular/router';
 export class BaseService {
   url = "http://localhost:3000/foglalasok";
 
-  constructor(private http: HttpClient, private router: Router) { }
+  constructor(private http: HttpClient) { }
 
   getReservations(): Observable<any[]> {
     return this.http.get<any[]>(this.url)
@@ -21,16 +20,13 @@ export class BaseService {
       );
   }
 
-  setReservation(datas: any) {
-    this.http.post(this.url, datas.value)
-      .subscribe(
-        (response) => {
-          this.router.navigate(['/foglalasok']);
-        },
-        (error) => {
-          console.error('Hiba az adatfeltöltés során:', error);
-        }
+  setReservation(datas: any): Observable<boolean> {
+    return this.http.post(this.url, datas.value)
+      .pipe(
+        map(() => true),
+        catchError(() => of(false))
       );
   }
+
 }
 

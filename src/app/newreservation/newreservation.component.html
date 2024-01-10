@@ -1,3 +1,4 @@
+<ng-container *ngIf="!isError; else haveError"></ng-container>
 <div class="container">
     <h1 class="mt-2">A szabadulószoba</h1>
     <h3 class="mt-4">Új foglalás felvétele</h3>
@@ -42,11 +43,14 @@
         <img src="/assets/images/logo.png" class="col col-lg-2 col-sm-4 mt-4" alt="a cég logója">
       </div>
 
-
-
-
     <div class="row footer fixed-bottom">
         <div class="col-6">a szabaduloszoba 2024 @</div>
         <div class="col-6">aszobabarohadszmeg@escape.com</div>
      </div>
 </div>
+
+<ng-template #haveError>
+  <div class="alert alert-danger" role="alert">
+      {{errorMessage}}
+    </div>
+</ng-template>
